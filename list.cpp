@@ -1,9 +1,10 @@
 #include "volsort.h"
 
-
 List::List(){
-    
-
+    Node* first = new Node;
+    first->next = nullptr;
+    first->number = 0;
+    first->string = "";
 }
 
 List::~List(){
