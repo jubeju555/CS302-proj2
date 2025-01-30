@@ -19,6 +19,8 @@ struct List {
     ~List();					// define in list.cpp
 
     void push_front(const std::string &s);	// also define in list.cpp
+    bool node_number_compare(const Node *a, const Node *b);	// also define in list.cpp
+    bool node_string_compare(const Node *a, const Node *b);	// also define in list.cpp
 };
 
 
