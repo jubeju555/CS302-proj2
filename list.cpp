@@ -10,7 +10,6 @@ List::List(){
 List::~List(){
     Node* temp = head; 
     while(temp != nullptr){
-        temp = head;
         delete head;
         temp = temp->next;
     }
