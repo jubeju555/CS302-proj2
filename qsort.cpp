@@ -8,11 +8,15 @@
 using namespace std;
 void List::qsort_sort(List &l, bool numeric, void *base, size_t num, size_t width, int (*compare)(const void *, const void *))
 {
-    qsort(base, num, width, compare);
+    // qsort(base, num, width, compare);
+    Node *head = (Node *)base;
+    Node *tail = (Node *)base;
     if (l.head == nullptr)
     {
         return;
-    }
+    }    
+    qsort_sort(l, numeric, base, num, width, compare);
+
 }
 int main()
 {
