@@ -71,7 +71,6 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
         righttail->next = nullptr;
     }
     pivot->next = nullptr; 
-    pivot->next = nullptr;
 }
 
 Node *concatenate(Node *left, Node *right) {
