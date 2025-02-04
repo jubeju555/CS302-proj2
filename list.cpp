@@ -8,12 +8,16 @@ List::List(){
 }
 
 List::~List(){
-    Node* temp = head; 
-    while(temp != nullptr){
-        delete head;
-        temp = temp->next;
+    Node* prev = head; 
+    Node* curr = head->next; 
+    while(curr != nullptr){
+
+        delete prev;
+        prev = curr;
+        curr = curr->next;
     }
-    delete temp;
+    delete prev;
+    delete curr;
 }
 
 void List::push_front(const std::string &s) {
