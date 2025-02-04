@@ -8,11 +8,12 @@
 /*
 
 */
-void List::qsort_sort(List &l, bool numeric, void* base, size_t num, size_t width, int (*compare)(const void*, const void*))
+void List::qsort_sort(List &l, bool numeric, void* base, size_t num, size_t width,
+ int (*compare)(const void*, const void*))
 {
     qsort(base, num, width, compare);
-}
-{
+
+
 
     Node *temp = l.head;
     Node *head = l.head;
@@ -30,9 +31,9 @@ void List::qsort_sort(List &l, bool numeric, void* base, size_t num, size_t widt
     {
         return;
     }
-    Node *pivot = partition(head, tail, numeric);
-    qsort_sort(l, head, pivot, numeric);
-    qsort_sort(l, pivot->next, tail, numeric);
+    // Node *pivot = partition(head, tail, numeric);
+    // qsort_sort(l, head, pivot, numeric);
+    // qsort_sort(l, pivot->next, tail, numeric);
         delete temp;
 
 }
