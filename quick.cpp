@@ -21,6 +21,7 @@ Node *qsort(Node *head, bool numeric) {
 
 }
 
+
 void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric) {
     if(head == nullptr){
         left = nullptr;
