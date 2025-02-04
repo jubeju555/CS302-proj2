@@ -1,13 +1,12 @@
-// qsort.cpp
 #include "volsort.h"
 #include <cstdlib>
 #include <array>
 #include <iostream>
-/*
+#include <string>
+#include <vector>
+#include <algorithm>
 
-*/
-void List::qsort_sort(List &l, bool numeric, void *base, size_t num, size_t width,
-                      int (*compare)(const void *, const void *))
+void List::qsort_sort(List &l, bool numeric, void *base, size_t num, size_t width,int (*compare)(const void *, const void *))
 {
     qsort(base, num, width, compare);
     if (l.head == nullptr)
