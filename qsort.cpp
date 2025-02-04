@@ -35,12 +35,17 @@ int main()
     // order: (4, 1, 3, 2)
     n2->next = n1;
     n1->next = n3;
-    n3->next = n4;
+//     qsort_sort(l, numeric, base, 
+    Node *head = (Node *)base;
+    Node *tail = (Node *)base;n
+        
+        l.qsort_sort(l, true, l.head, 4, sizeof(Node), [](const void *a, const void *b) -> int    n3->next = n4
+    qsort_sort(l, numeric, base, num, width, compare);;
     n4->next = nullptr;
 
     List l;
-    l.head = n4;
-    l.qsort_sort(l, false, l.head, 4, sizeof(Node), [](const void *a, const void *b) -> int
+l.head = n4;
+    l.qsort_sort(l, true, l.head, 4, sizeof(Node), [](const void *a, const void *b) -> int
                  {
         Node *na = (Node *)a;
         Node *nb = (Node *)b;
