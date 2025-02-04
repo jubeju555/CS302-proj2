@@ -5,8 +5,8 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-
-void List::qsort_sort(List &l, bool numeric, void *base, size_t num, size_t width,int (*compare)(const void *, const void *))
+using namespace std;
+void List::qsort_sort(List &l, bool numeric, void *base, size_t num, size_t width, int (*compare)(const void *, const void *))
 {
     qsort(base, num, width, compare);
     if (l.head == nullptr)
@@ -14,21 +14,21 @@ void List::qsort_sort(List &l, bool numeric, void *base, size_t num, size_t widt
         return;
     }
 }
-int main(){
-    //initializing
-    Node* n1 = new Node;
+int main()
+{
+    Node *n1 = new Node;
     n1->string = "a";
     n1->number = 1;
-    Node* n2 = new Node;
+    Node *n2 = new Node;
     n2->string = "b";
     n2->number = 2;
-    Node* n3 = new Node;
+    Node *n3 = new Node;
     n3->string = "c";
     n3->number = 3;
-    Node* n4 = new Node;
+    Node *n4 = new Node;
     n4->string = "d";
     n4->number = 4;
-    //ordering (4, 1, 3, 2)
+    // order: (4, 1, 3, 2)
     n2->next = n1;
     n1->next = n3;
     n3->next = n4;
@@ -36,17 +36,18 @@ int main(){
 
     List l;
     l.head = n4;
-    l.qsort_sort(l, false, l.head, 4, sizeof(Node), [](const void *a, const void *b) -> int {
+    l.qsort_sort(l, false, l.head, 4, sizeof(Node), [](const void *a, const void *b) -> int
+                 {
         Node *na = (Node *)a;
         Node *nb = (Node *)b;
-        return na->string.compare(nb->string);
-    });
-    Node* head = l.head;
-    while(head->next != nullptr){
-        std::cout<<head->string<<"->";
+        return na->string.compare(nb->string); });
+    Node *head = l.head;
+    while (head->next != nullptr)
+    {
+        cout << head->string << "->";
         head = head->next;
     }
-    std::cout<<head->string<<"\n";
+    std::cout << head->string << "\n";
     return 0;
 }
 
