@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+// qsort.cpp
+>>>>>>> 336cb5a (	modified:   qsort.cpp)
 #include "volsort.h"
 #include <cstdlib>
 #include <array>
