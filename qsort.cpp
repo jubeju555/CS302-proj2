@@ -6,16 +6,7 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-struct Node
-{
-    string string;
-    int number;
-    Node *next;
-};
-struct List
-{
-    Node *head;
-};
+
 void qsort_sort(List &l, bool numeric, void *base, size_t num, size_t width, int compare)
 {
     if (l.head == nullptr)
