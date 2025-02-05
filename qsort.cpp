@@ -9,6 +9,7 @@ using namespace std;
 
 void qsort_sort(List &l, bool numeric, void *base, size_t num, size_t width, int compare)
 {
+    
     if (l.head == nullptr)
     {
         return;
@@ -25,7 +26,6 @@ void qsort_sort(List &l, bool numeric, void *base, size_t num, size_t width, int
         current = current->next;
     }
 }
-
 
 int main(){
  Node *n1 = new Node;
@@ -49,6 +49,9 @@ int main(){
 
     List l;
     l.head = n4;
+
+    qsort_sort(l,false);
+    
     return 0;
 }    
 // qsort_sort(l, true, l.head, 4, sizeof(Node), [numeric](const void *a, const void *b) -> int
