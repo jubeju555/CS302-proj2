@@ -8,19 +8,11 @@
 using namespace std;
 void List::qsort_sort(List &l, bool numeric, void *base, size_t num, size_t width, int (*compare)(const void *, const void *))
 {
-    // qsort(base, num, width, compare);
-    Node *head = (Node *)base;
-    Node *tail = (Node *)base;
     if (l.head == nullptr)
     {
         return;
     }    
-    qsort_sort(l, numeric, base, num, width, compare);
-
-}
-int main()
-{
-    // Create test nodes
+    qsort(base, num, width, compare);
     Node *n1 = new Node;
     n1->string = "a";
     n1->number = 1;
@@ -43,15 +35,18 @@ int main()
     List l;
     l.head = n4;
 
-    l.qsort_sort(l, true, l.head, 4, sizeof(Node), [](const void *a, const void *b) -> int {
+    l.qsort_sort(l, true, l.head, 4, sizeof(Node), [numeric](const void *a, const void *b) -> int {
         Node *na = (Node *)a;
         Node *nb = (Node *)b;
-        return na->string.compare(nb->string);
+        if (numeric) {
+            return na->number - nb->number;
+        } else {
+            return na->string.compare(nb->string);
+        }
     });
 
-    // Print results
     Node *current = l.head;
-    while (current->next != nullptr) {
+    while (current != nullptr) {
         cout << current->string << "->";
         current = current->next;
     }
@@ -63,6 +58,4 @@ int main()
         l.head = l.head->next;
         delete temp;
     }
-
-    return 0;
 }
