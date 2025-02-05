@@ -7,7 +7,7 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-void List::qsort_sort(List &l, bool numeric, void *base, size_t num, size_t width, int (*compare)(const void *, const void *))
+void qsort_sort(List &l, bool numeric, void *base, size_t num, size_t width, int compare)
 {
     if (l.head == nullptr)
     {
@@ -36,7 +36,8 @@ void List::qsort_sort(List &l, bool numeric, void *base, size_t num, size_t widt
     List l;
     l.head = n4;
 
-    l.qsort_sort(l, true, l.head, 4, sizeof(Node), [numeric](const void *a, const void *b) -> int {
+    qsort_sort(l, true, l.head, 4, sizeof(Node), [numeric](const void *a, const void *b) -> int
+     {
         Node *na = (Node *)a;
         Node *nb = (Node *)b;
         if (numeric) {
