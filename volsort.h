@@ -21,7 +21,7 @@ struct List {
     void push_front(const std::string &s);	// also define in list.cpp
     bool node_number_compare(const Node *a, const Node *b);	// also define in list.cpp
     bool node_string_compare(const Node *a, const Node *b);
-    void qsort_sort(List &l, bool numeric, void *base, size_t num, size_t width, int (*compare)(const void *, const void *));
+   // void qsort_sort(List &l, bool numeric, void *base, size_t num, size_t width, int (*compare)(const void *, const void *));
     // also define in list.cpp
 };
 
@@ -29,7 +29,7 @@ struct List {
 // Functions -------------------------------------------------------------------
 
 void stl_sort(List &l, bool numeric);	// define in stl.cpp - sort using std::sort
-void qsort_sort(List &l, bool numeric);	// define in qsort.cpp - sort using qsort from cstdlib
+void qsort_sort(List &l, bool numeric, void *base, size_t num, size_t width, int (*compare)(const void *, const void *));	// define in qsort.cpp - sort using qsort from cstdlib
 void merge_sort(List &l, bool numeric);	// define in merge.cpp - your implementation
 void quick_sort(List &l, bool numeric);	// define in quick.cpp - your implementation
 
