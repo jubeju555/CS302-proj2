@@ -52,7 +52,6 @@ void List::qsort_sort(List &l, bool numeric, void *base, size_t num, size_t widt
     }
     cout << current->string << "\n";
 
-    // Clean up memory
     while (l.head != nullptr) {
         Node *temp = l.head;
         l.head = l.head->next;
