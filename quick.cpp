@@ -3,7 +3,7 @@
 #include "volsort.h"
 
 #include <iostream>
-
+using namespace std;
 // Prototypes
 
 Node *qsort(Node *head, bool numeric);
@@ -107,14 +107,19 @@ int main(){
     n3->next = n4;
     n4->next = nullptr;
 
+
+
+
     List l;
     l.head = n4;
     quick_sort(l, false);
     Node* head = l.head;
     while(head->next != nullptr){
-        std::cout<<head->string<<"->";
+    cout<<head->string<<"->";
         head = head->next;
     }
-    std::cout<<head->string<<"\n";
+    quick_sort(l, true);
+    head = l.head;
+    cout << head->string << "\n";
     return 0;
 }
