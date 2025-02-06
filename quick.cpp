@@ -3,7 +3,6 @@
 #include "volsort.h"
 #include <iostream>
 using namespace std;
-// Prototypes
 
 Node *qsort(Node *head, bool numeric);
 void  partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric);
@@ -21,7 +20,6 @@ void quick_sort(List &l, bool numeric) {
         cout << current->string << "\n";
     }
     // cout << head->string << "\n";
-
 }
 
 Node *qsort(Node *head, bool numeric) {
@@ -50,7 +48,6 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
     Node *lefttail = nullptr;
     Node *righttail = nullptr;
     Node *temp = head;
-    pivot = head;
     temp = temp->next;
     while(temp != nullptr){
         if((numeric && temp->number < pivot->number) || (!numeric && temp->string < pivot->string)){
@@ -71,14 +68,15 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
             }
         }
         temp = temp->next;
+
     }
+    pivot->next = nullptr; 
     if(lefttail != nullptr){
-        lefttail->next = nullptr;
+        lefttail->next = pivot;
     }
     if(righttail != nullptr){
         righttail->next = nullptr;
     }
-    pivot->next = nullptr; 
 }
 
 Node *concatenate(Node *left, Node *right) {
