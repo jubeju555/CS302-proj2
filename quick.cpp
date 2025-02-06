@@ -14,6 +14,15 @@ Node *concatenate(Node *left, Node *right);
 // c++.com was used to teach me what qsort is 
 void quick_sort(List &l, bool numeric) {
     l.head = qsort(l.head, numeric);
+    Node *current = l.head;
+    if (current != nullptr) {
+        while (current->next != nullptr) {
+            cout << current->string << "->";
+            current = current->next;
+        }
+        cout << current->string << "\n";
+    }
+    // cout << head->string << "\n";
 
 }
 
@@ -21,14 +30,13 @@ Node *qsort(Node *head, bool numeric) {
     if(head == nullptr || head->next == nullptr){
         return head;
     }
-
     Node *left = nullptr;
     Node *right = nullptr;
     Node *pivot = head;
     // c++.com (what to put inside the partition) front, pivot, left, right, and amount of elements
     partition(head, pivot, left, right, numeric);
     left = qsort(left, numeric);
-    right = qsort(right, numeric);
+    right = qsort(right, numeric); 
     return concatenate(left, concatenate(pivot, right));
 }
 // c++.com was used to teach me what partition is and concatenating
@@ -107,19 +115,12 @@ int main(){
     n3->next = n4;
     n4->next = nullptr;
 
-
-
-
     List l;
     l.head = n4;
     // quick_sort(l, false);
-    Node* head = l.head;
-    while(head->next != nullptr){
-    cout<<head->string<<"->";
-        head = head->next;
-    }
-    quick_sort(l, true);
-    head = l.head;
-    cout << head->string << "\n";
+    // Node* head = l.head;
+        // head = l.head;
+
+    quick_sort(l, false);
     return 0;
 }

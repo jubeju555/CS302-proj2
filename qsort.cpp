@@ -22,14 +22,18 @@ void qsort_sort(List &l, bool numeric)
         return;
     }    
     if(numeric){
-        sort(vec.begin(), vec.end(), [](const Node *a, const Node *b) -> bool
+        qsort(vec.data(), vec.size(), sizeof(Node *), [](const void *a, const void *b) -> int
         {
-            return a->number < b->number;
+            Node *na = *(Node **)a;
+            Node *nb = *(Node **)b;
+            return na->number - nb->number;
         });
-    } else {
-        sort(vec.begin(), vec.end(), [](const Node *a, const Node *b) -> bool
+        } else {
+        qsort(vec.data(), vec.size(), sizeof(Node *), [](const void *a, const void *b) -> int
         {
-            return a->string < b->string;
+            Node *na = *(Node **)a;
+            Node *nb = *(Node **)b;
+            return na->string.compare(nb->string);
         });
 
         l.head = vec[0];
