@@ -9,7 +9,6 @@ Node *qsort(Node *head, bool numeric);
 void  partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric);
 Node *concatenate(Node *left, Node *right);
 
-// Implementations
 // c++.com was used to teach me what qsort is 
 void quick_sort(List &l, bool numeric) {
     l.head = qsort(l.head, numeric);
@@ -35,11 +34,13 @@ Node *qsort(Node *head, bool numeric) {
     // c++.com (what to put inside the partition) front, pivot, left, right, and amount of elements
     partition(head, pivot, left, right, numeric);
     left = qsort(left, numeric);
-    right = qsort(right, numeric); 
-    return concatenate(left, concatenate(pivot, right));
-}
-// c++.com was used to teach me what partition is and concatenating
+    right = qsort(right, numeric);
 
+    Node *postpivotlist = pivot;
+    postpivotlist->next = nullptr;
+    return concatenate(concatenate(left, postpivotlist), right);
+}
+// c++.com was used to teach me what partition is
 void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric) {
     if(head == nullptr){
         left = nullptr;
@@ -95,7 +96,7 @@ Node *concatenate(Node *left, Node *right) {
     return left;
 }
 int main(){
-    //initializing
+    
     Node* n1 = new Node;
     n1->string = "a";
     n1->number = 1;
@@ -108,7 +109,7 @@ int main(){
     Node* n4 = new Node;
     n4->string = "d";
     n4->number = 4;
-    //ordering (4, 1, 3, 2)
+    //order :(4, 1, 3, 2)
     n2->next = n1;
     n1->next = n3;
     n3->next = n4;
