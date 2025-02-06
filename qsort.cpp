@@ -72,7 +72,6 @@ int main(){
 
     List l;
     l.head = n4;
-
     qsort_sort(l,false);
     
     return 0;
