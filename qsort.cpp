@@ -22,6 +22,7 @@ void qsort_sort(List &l, bool numeric)
         return;
     }    
     if(numeric){
+    // quick google search for methods that get first pointer, size i already knew
         qsort(vec.data(), vec.size(), sizeof(Node *), [](const void *a, const void *b) -> int
         {
             Node *na = *(Node **)a;
