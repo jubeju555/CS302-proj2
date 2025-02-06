@@ -12,8 +12,8 @@ Node *merge(Node *left, Node *right, bool numeric);
 
 // Implementations
 
-// void merge_sort(List &l, bool numeric) {
-// }
+void merge_sort(List &l, bool numeric) {
+}
 //
 // Node *msort(Node *head, bool numeric) {
 // }
@@ -24,3 +24,7 @@ Node *merge(Node *left, Node *right, bool numeric);
 // Node *merge(Node *left, Node *right, bool numeric) {
 // }
 
+
+// NOTE:
+// Basic Idea: You have an array [1][4][5][3][2][6]
+// Split it up: [1][4][5]    [3][2][6]

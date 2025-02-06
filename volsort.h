@@ -21,7 +21,6 @@ struct List {
     void push_front(const std::string &s);	// also define in list.cpp
     bool node_number_compare(const Node *a, const Node *b);	// also define in list.cpp
     bool node_string_compare(const Node *a, const Node *b);
-    void qsort_sort(List &l, bool numeric, void *base, size_t num, size_t width, int (*compare)(const void *, const void *));
     // also define in list.cpp
 };
 
