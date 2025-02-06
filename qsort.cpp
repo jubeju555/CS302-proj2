@@ -8,23 +8,46 @@
 #include <algorithm>
 using namespace std;
 
-void qsort_sort(List &l, bool numeric, void *base, size_t num, size_t width, int compare)
+void qsort_sort(List &l, bool numeric)
 {
-    
-    if (l.head == nullptr)
-    {
-        return;
-    }    
-    if (num <= 1)
-    {
-        return;
-    }
     vector<Node *> vec;
     Node *current = l.head;
     while (current != nullptr)
     {
         vec.push_back(current);
         current = current->next;
+    }  
+    if (l.head == nullptr)
+    {
+        return;
+    }    
+    if(numeric){
+        sort(vec.begin(), vec.end(), [](const Node *a, const Node *b) -> bool
+        {
+            return a->number < b->number;
+        });
+    } else {
+        sort(vec.begin(), vec.end(), [](const Node *a, const Node *b) -> bool
+        {
+            return a->string < b->string;
+        });
+
+        l.head = vec[0];
+        for (size_t i = 0; i < vec.size() - 1; i++)
+        {
+            vec[i]->next = vec[i + 1];
+        }
+        vec[vec.size() - 1]->next = nullptr;
+
+        current = l.head;
+        while (current->next != nullptr)
+        {
+            cout << current->string << "->";
+            current = current->next;
+        }
+        cout << current->string << "\n";
+        vec[vec.size() - 1]->next = nullptr;
+        current = l.head;
     }
 }
 
