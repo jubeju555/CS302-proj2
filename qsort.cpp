@@ -54,7 +54,13 @@ void qsort_sort(List &l, bool numeric)
         current = l.head;
     }
 }
+// this is only for scripts, not for main
+int compare(const void *a, const void *b) {
+    const Node *na = *(const Node **)a;
+    const Node *nb = *(const Node **)b;
 
+    return na->string.compare(nb->string);  // Adjust this for numeric sorting if needed
+}
 int main(){
  Node *n1 = new Node;
     n1->string = "a";
