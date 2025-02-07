@@ -130,5 +130,3 @@ Node *concatenate(Node *left, Node *right)
 
 //     quick_sort(l, false);
 
-//     return 0;
-// }

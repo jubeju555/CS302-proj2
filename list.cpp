@@ -6,15 +6,12 @@ List::List(){
 }
 
 List::~List(){
-    Node* prev = head; 
-    Node* curr = head->next; 
-    while(curr != nullptr){
-        delete prev;
-        prev = curr;
-        curr = curr->next;
+    Node* curr; 
+    while(head != nullptr){
+        curr = head->next;
+        delete head;
+        head = curr;
     }
-    delete prev;
-    delete curr;
 }
 
 void List::push_front(const std::string &s) {
