@@ -55,45 +55,50 @@ void qsort_sort(List &l, bool numeric)
         current = l.head;
     }
 }
-// this is only for scripts, not for main
-int compare(const void *a, const void *b) {
-    const Node *na = *(const Node **)a;
-    const Node *nb = *(const Node **)b;
 
-    return na->string.compare(nb->string);  // Adjust this for numeric sorting if needed
-}
-int main(){
- Node *n1 = new Node;
-    n1->string = "a";
-    n1->number = 1;
-    Node *n2 = new Node;
-    n2->string = "b";
-    n2->number = 2;
-    Node *n3 = new Node;
-    n3->string = "c";
-    n3->number = 3;
-    Node *n4 = new Node;
-    n4->string = "d";
-    n4->number = 4;
+// int main(){
+//  Node *n1 = new Node;
+//     n1->string = "a";
+//     n1->number = 1;
+//     Node *n2 = new Node;
+//     n2->string = "b";
+//     n2->number = 2;
+//     Node *n3 = new Node;
+//     n3->string = "c";
+//     n3->number = 3;
+//     Node *n4 = new Node;
+//     n4->string = "d";
+//     n4->number = 4;
 
-    // Link nodes (4 -> 1 -> 3 -> 2)
-    n4->next = n1;
-    n1->next = n3;
-    n3->next = n2;
-    n2->next = nullptr;
+//     // Link nodes (4 -> 1 -> 3 -> 2)
+//     n4->next = n1;
+//     n1->next = n3;
+//     n3->next = n2;
+//     n2->next = nullptr;
 
-    List l;
-    l.head = n4;
-    qsort_sort(l,false);
+//     List l;
+//     l.head = n4;
+//     qsort_sort(l,false);
     
-    return 0;
-}    
+//     return 0;
+// }   
+
+
+
+// this is only for scripts, not for main
+// int compare(const void *a, const void *b) {
+//     const Node *na = *(const Node **)a;
+//     const Node *nb = *(const Node **)b;
+
+//     return na->string.compare(nb->string);  // Adjust this for numeric sorting if needed
+// }
+
 // qsort_sort(l, true, l.head, 4, sizeof(Node), [numeric](const void *a, const void *b) -> int
-    //  {
-    //     Node *na = (Node *)a;
-    //     Node *nb = (Node *)b;
-    //     if (numeric) {
-    //         return na->number - nb->number;
+//     //  {
+//          Node *na = (Node *)a;
+//          Node *nb = (Node *)b;
+//          if (numeric) {
+//              return na->number - nb->number;
     //     } else {
     //         return na->string.compare(nb->string);
     //     }
