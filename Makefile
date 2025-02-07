@@ -1,6 +1,6 @@
 CXX=		g++
-CXXFLAGS=	-g -Wall -std=gnu++11
-LDFLAGS=	
+CXXFLAGS=	-g -Wall -std=gnu++11 -fPIE
+LDFLAGS=	-g -Wall -std=gnu++11 -fPIE
 SHELL=		bash
 PROGRAMS=	volsort
 SOURCES=	main.cpp stl.cpp qsort.cpp quick.cpp merge.cpp list.cpp

@@ -33,6 +33,15 @@ void stl_sort(List &l, bool numeric) {
         vec[i]->next = vec[i+1];
     }
     vec[vec.size()-1]->next = nullptr;
+
+    head = l.head;
+    while(head->next != nullptr){
+        cout<<head->string<<"->";
+        head = head->next;
+    }
+    cout<<head->string<<"\n";
+    vec[vec.size()-1]->next = nullptr;
+    head = l.head;
 }
 // int main(){
 //     //initializing
@@ -49,6 +58,7 @@ void stl_sort(List &l, bool numeric) {
 //     n4->string = "d";
 //     n4->number = 4;
 //     //ordering (4, 1, 3, 2)
+//
 //     n4->next = n3;
 //     n3->next = n2;
 //     n2->next = n1;
