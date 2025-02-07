@@ -111,22 +111,24 @@ Node *concatenate(Node *left, Node *right)
     temp->next = right;
     return left;
 }
-int main()
-{
-    Node *n1 = new Node{"a", 1, nullptr};
-    Node *n2 = new Node{"b", 2, nullptr};
-    Node *n3 = new Node{"c", 3, nullptr};
-    Node *n4 = new Node{"d", 4, nullptr};
 
-    // Properly linking the nodes in the initial list
-    n4->next = n1;
-    n1->next = n3;
-    n3->next = n2;
 
-    List l;
-    l.head = n4;
+// int main()
+// {
+//     Node *n1 = new Node{"a", 1, nullptr};
+//     Node *n2 = new Node{"b", 2, nullptr};
+//     Node *n3 = new Node{"c", 3, nullptr};
+//     Node *n4 = new Node{"d", 4, nullptr};
 
-    quick_sort(l, false);
+//     // Properly linking the nodes in the initial list
+//     n4->next = n1;
+//     n1->next = n3;
+//     n3->next = n2;
 
-    return 0;
-}
+//     List l;
+//     l.head = n4;
+
+//     quick_sort(l, false);
+
+//     return 0;
+// }
