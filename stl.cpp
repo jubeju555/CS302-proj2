@@ -58,10 +58,10 @@ void stl_sort(List &l, bool numeric) {
 //     n4->string = "d";
 //     n4->number = 4;
 //     //ordering (4, 1, 3, 2)
-//     n2->next = n1;
+//     n4->next = n1;
 //     n1->next = n3;
-//     n3->next = n4;
-//     n4->next = nullptr;
+//     n3->next = n2;
+//     n2->next = nullptr;
 
 //     List l;
 //     l.head = n4;
