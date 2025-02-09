@@ -17,6 +17,11 @@ bool node_number_compare(const Node* a, const Node* b){
 }
      
 void stl_sort(List &l, bool numeric) {
+    string num = "";
+    while(cin>>num){
+        cout<<num;
+        l.push_front(num);
+    }
     Node* head = l.head;
     vector<Node*> vec;
     while(head!=nullptr){
@@ -28,11 +33,17 @@ void stl_sort(List &l, bool numeric) {
     else sort(vec.begin(), vec.end(), node_string_compare);
    
     //make the list the same order as the vec
-    l.head = vec[0];
     for(size_t i=0; i<vec.size()-1; i++){
         vec[i]->next = vec[i+1];
     }
+    l.head = vec[0];
     vec[vec.size()-1]->next = nullptr;
+
+    Node* temp = head;
+    while(temp!=nullptr){
+        cout<<temp->string<<"\n";
+        temp = temp->next;
+    }
 }
 // int main(){
 //     //initializing

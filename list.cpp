@@ -12,6 +12,7 @@ List::~List(){
         delete head;
         head = curr;
     }
+    delete curr;
 }
 
 void List::push_front(const std::string &s) {
