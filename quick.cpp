@@ -12,16 +12,16 @@ Node *concatenate(Node *left, Node *right);
 void quick_sort(List &l, bool numeric)
 {
     l.head = qsort(l.head, numeric);
-    cout << "New head after sorting: " << l.head->string << "\n";
+    // cout << "New head after sorting: " << l.head->string << "\n";
     Node *current = l.head;
     if (current != nullptr)
     {
         while (current->next != nullptr)
         {
-            cout << current->string << "->";
+            // cout << current->string << "->";
             current = current->next;
         }
-        cout << current->string << "\n";
+        // cout << current->string << "\n";
     }
 }
 
