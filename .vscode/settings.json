@@ -45,8 +45,12 @@
         "streambuf": "cpp",
         "cinttypes": "cpp",
         "typeinfo": "cpp"
+<<<<<<< HEAD
     },
     "cSpell.words": [
         "qsort"
     ]
+=======
+    }
+>>>>>>> keaton
 }
