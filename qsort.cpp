@@ -26,8 +26,30 @@ void qsort_sort(List &l, bool numeric)
         {
             Node *na = *(Node **)a;
             Node *nb = *(Node **)b;
-            return na->number - nb->number;
+            if (na->number < nb->number) return -1;
+            else if (na->number > nb->number) return 1;
+            return 0;
+            //   cout<<"na: "<<na->number<<"   nb: "<<nb->number<<endl;
+            // return na->number - nb->number;
         });
+
+        l.head = vec[0];
+        for (size_t i = 0; i < vec.size() - 1; i++)
+        {
+            vec[i]->next = vec[i + 1];
+        }
+        vec[vec.size() - 1]->next = nullptr;
+
+        current = l.head;
+        while (current->next != nullptr)
+        {
+            // cout << current->string << "->";
+            current = current->next;
+        }
+        // cout << current->string << "\n";
+        vec[vec.size() - 1]->next = nullptr;
+        current = l.head;
+
         } else {
         qsort(vec.data(), vec.size(), sizeof(Node *), [](const void *a, const void *b) -> int
         {
@@ -46,10 +68,10 @@ void qsort_sort(List &l, bool numeric)
         current = l.head;
         while (current->next != nullptr)
         {
-            cout << current->string << "->";
+            // cout << current->string << "->";
             current = current->next;
         }
-        cout << current->string << "\n";
+        // cout << current->string << "\n";
         vec[vec.size() - 1]->next = nullptr;
         current = l.head;
     }

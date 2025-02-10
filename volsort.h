@@ -29,7 +29,7 @@ struct List {
 // Functions -------------------------------------------------------------------
 
 void stl_sort(List &l, bool numeric);	// define in stl.cpp - sort using std::sort
-void qsort_sort(List &l, bool numeric, void *base, size_t num, size_t width, int (*compare)(const void *, const void *));	// define in qsort.cpp - sort using qsort from cstdlib
+void qsort_sort(List &l, bool numeric);	// define in qsort.cpp - sort using qsort from cstdlib
 void merge_sort(List &l, bool numeric);	// define in merge.cpp - your implementation
 void quick_sort(List &l, bool numeric);	// define in quick.cpp - your implementation
 
