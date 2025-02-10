@@ -68,16 +68,15 @@ int main(int argc, char *argv[]) {
     parse_command_line_options(argc, argv, mode, numeric);
 
     while (std::getline(std::cin, line)) {
-     // data.push_front(line);
+      data.push_front(line);
     }
 
-/*
     switch (mode) {
         case MODE_STL:
             stl_sort(data, numeric);
             break;
         case MODE_QSORT:
-            qsort_sort(data, numeric);
+            // qsort_sort(data, numeric);
             break;
         case MODE_MERGE:
             merge_sort(data, numeric);
@@ -87,7 +86,6 @@ int main(int argc, char *argv[]) {
             break;
     }
     
-*/
     for (Node * curr = data.head; curr != NULL; curr = curr->next) {
         if (numeric) {
             std::cout << curr->number << std::endl;
