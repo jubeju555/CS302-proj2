@@ -14,7 +14,7 @@ Node *merge(Node *left, Node *right, bool numeric);
 // Implementations
 
 void merge_sort(List &l, bool numeric) {
-    msort(l.head, numeric);
+    l.head = msort(l.head, numeric);
 }
 
 Node* msort(Node* head, bool numeric) {
