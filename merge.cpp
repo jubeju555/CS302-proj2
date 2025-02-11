@@ -82,7 +82,7 @@ void split(Node* head, Node* &left, Node* &right) {
     // cout<<endl;
 }
 
-Node *merge(Node* left, Node* right, bool numeric) {
+Node* merge(Node* left, Node* right, bool numeric) {
     //assuming left and right are the head of left and head of right
     // cout<<"----Merging----"<<endl<<"Left: ";
     // Node* p_left = left;
