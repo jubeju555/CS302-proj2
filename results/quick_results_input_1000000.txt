@@ -1,0 +1,1 @@
+quick | File: input_1000000.txt | Time: .00720000000000000000 sec | Memory:  KB

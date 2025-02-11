@@ -25,13 +25,20 @@ for file in "${input_files[@]}"; do
     for mode in "stl" "qsort" "merge" "quick"; do
         echo "Running $mode sort on $file..."
         
-        # Capture start time and memory usage
+        # Capture start time
         start_time=$(date +%s%3N)  # Millisecond precision
-        /usr/bin/time -v ./volsort -$mode < "$file" > /dev/null 2> time_output.txt
+
+        # Start the sort and capture memory using ps
+        /usr/bin/time -v ./volsort -$mode < "$file" > /dev/null 2> time_output.txt &
+
+        pid=$!
+        ps_output=$(ps -p $pid -o rss=)
+
+        wait $pid  # Wait for the process to complete
 
         # Capture elapsed time and memory from the time_output.txt
         elapsed_time=$(echo "$(($(date +%s%3N) - $start_time))" | awk '{print $1/1000}')  # Convert to seconds
-        memory=$(grep "Maximum resident set size" time_output.txt | awk '{print $6}')
+        memory=$ps_output  # Memory usage in KB
 
         # Print to terminal
         echo "$mode | File: $file | Time: $elapsed_time sec | Memory: $memory KB"

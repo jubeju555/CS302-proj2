@@ -1,0 +1,1 @@
+stl | File: input_500000.txt | Time: .00800000000000000000 sec | Memory:  KB
