@@ -10,3 +10,27 @@ Keaton:
 a brief summary of each individual group members contributions to the project.
 Judah: i did both qsort and quick, as well as set up the scripts for the times with the set amounts of numbers and time them. 
 Keaton: 
+
+
+| **MODE**  | **SIZE** | **TIME** |
+| --------- | -------- | -------- |
+| **MERGE** | 100000   | 0.147    |
+| **MERGE** | 500000   | 2.386    |
+| **MERGE** | 1000000  | 6.036    |
+| **MERGE** | 10000000 | 1:47.69  |
+| **MERGE** | 25000000 | 2:32.79  |
+| **QUICK** | 100000   | 0.208    |
+| **QUICK** | 500000   | 2.425    |
+| **QUICK** | 1000000  | 6.035    |
+| **QUICK** | 10000000 | 1:46.50  |
+| **QUICK** | 25000000 | 5:11.56  |
+| **STL**   | 100000   | 0.195    |
+| **STL**   | 500000   | 2.905    |
+| **STL**   | 1000000  | 5.808    |
+| **STL**   | 10000000 | 55.323   |
+| **STL**   | 25000000 | 5:09.60  |
+| **QSORT** | 100000   | 0.171    |
+| **QSORT** | 500000   | 2.440    |
+| **QSORT** | 1000000  | 5.307    |
+| **QSORT** | 10000000 | 1:01.00  |
+| **QSORT** | 25000000 | 2:43.36  |
