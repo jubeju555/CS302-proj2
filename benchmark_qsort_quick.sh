@@ -9,7 +9,7 @@ if [[ $? -ne 0 ]]; then
 fi
 
 # Define input file names explicitly
-input_files=("input_100000.txt" "input_500000.txt" "input_1000000.txt" "input_10000000.txt" "input_25000000.txt")
+input_files=("input_100000.txt" "input_500000.txt" "input_1000000.txt" "input_10000000.txt")
 
 # Initialize results file
 echo "| Mode  | Input File        | Elapsed Time (s) | Memory (KB) |" > results.md
